@@ -1,7 +1,15 @@
 {
-	"apps": {
-		"title": "Application",
-		"icons": ["calc", "write", "clock", "notepad"]
+	"games": {
+		"title": "Games",
+		"icons": [
+			"minesweeper",
+			"mshearts",
+			"mspaint",
+			"paintbrush",
+			"sol",
+			"solitaire",
+			"monalisa"
+		]
 	},
 	"cpanel": {
 		"title": "Control Panel",

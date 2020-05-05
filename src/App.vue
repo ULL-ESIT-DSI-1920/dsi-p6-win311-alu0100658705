@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <win311-icon name="msdos" />
-    <win311-window theme="cpanel" />
+    <win311-window theme="cpanel" left="20%" top="0%" :mostrar="false" />
+    <win311-window theme="games" left="25%" top="-8%" />
   </div>
 </template>
 

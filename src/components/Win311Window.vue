@@ -1,5 +1,5 @@
 <template>
-  <div class="window">
+  <div :style="cssVars" class="window">
     <div class="contenido">
       <div class="titulo">
         {{ title }}
@@ -11,7 +11,7 @@
         <win311-icon v-for="(name, index) in this.icons" :name="icons[index]" :key="index"></win311-icon>
       </div>
     </div>
-    <div class="pie">Select app to open...</div>
+    <div v-if="mostrar" class="pie">Select a game to open...</div>
   </div>
 </template>
 
@@ -27,8 +27,20 @@ export default {
   props: {
     theme: {
       type: String,
-      default: "normal",
+      default: "cpanel",
       required: true
+    },
+    left: {
+      type: String,
+      default: "auto"
+    },
+    top: {
+      type: String,
+      default: "auto"
+    },
+    mostrar: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -44,6 +56,15 @@ export default {
       this.icons = json[ind].icons;
     }
   },
+  computed: {
+    cssVars() {
+      console.log("hola");
+      return {
+        "--left": this.left,
+        "--top": this.top
+      };
+    }
+  },
   beforeMount() {
     this.getVariables();
   }
@@ -55,16 +76,17 @@ export default {
   background-color: lightgray;
   padding: 2px 8px 4px 8px;
   width: 700px;
-  height: 500px;
-  margin-left: auto;
+  height: 400px;
+  margin-left: var(--left);
   margin-right: auto;
+  margin-top: var(--top);
   border-bottom: solid 1px black;
 }
 
 .contenido {
   background-color: white;
   width: 100%;
-  height: 460px;
+  height: 360px;
 }
 
 .titulo {
