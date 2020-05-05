@@ -82,7 +82,7 @@ En primer lugar se define un fichero _vue.config.js_ con el siguiente contenido:
 
 ![cap11](src/assets/cap11.png)
 
-A continuación debemos se ejcuta el comando <code>npm run build</code>:
+A continuación se ejcuta el comando <code>npm run build</code>:
 
 ![cap10](src/assets/cap10.png)
 
