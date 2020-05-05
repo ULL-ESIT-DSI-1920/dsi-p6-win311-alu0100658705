@@ -22,7 +22,7 @@ Vemamos la estructura del componente principal _App.vue_:
 
 ![cap03](src/assets/cap03.png)
 
-- Se han definido dos componentes _ventanda_: cpanel y games.
+- Se han definido dos componentes _Win311Window_: cpanel y games.
 - Un componente _icono_ con el icono del ejemplo.
 - Para los estilos se ha definido el color de fondo y algunos estilos adicionales no muy significativos.
 
@@ -34,13 +34,13 @@ Dentro del componenete **Win311Window** se ha definido la siguiente estructura. 
 
 - Se ha añadido una directiva _style_ que hace referencia a un método definido como una propiedad computada _cssVars()_ que se encarga de definir parametros de estilos diferentes para cada uno de los componentes ventana en función de los _props_ recibidos. En este caso se está utilizando para que una ventana se sobreponga ligeramente a la otra.
 
-- Se añade el título de la ventana a la barra del menú a través de la variable definida en data _title_.
+- Se añade el título de la ventana a la barra del menú a través de la variable definida en data; _title_.
 
 - Se añade el menú y las etiquetas correspondientes que lo conforman.
 
-- Para generar los componentes de icono que conformarán la ventana se utiliza la siguiente etiqueta <code><win311-icon v-for="(name, index) in this.icons" :name="icons[index]" :key="index"></win311-icon></code>; se aplica un bucle sobre la variable _icons_ del componente ventana que contiene un array con el nombre de los iconos que se han importado previamente del fichero _windows.json_.
+- Para generar los componentes de icono que conformarán la ventana se utiliza la siguiente etiqueta <code><win311-icon v-for="(name, index) in this.icons" :name="icons[index]" :key="index"></win311-icon></code>; se aplica un bucle sobre la variable _icons_ del componente _Win311Window_ que contiene un array con el nombre de los iconos que se han importado previamente del fichero _windows.json_.
 
-- Por último en <code><div v-if="mostrar" class="pie">Select a game to open...</div></code> se utiliza una condición extraida de una _prop_ que recibe el componente, que define si se debe o no mostrar (La utilizamos para que no se vea en la ventana que se encuentra debajo).
+- Por último en <code><div v-if="mostrar" class="pie">Select a game to open...</div></code> se utiliza una condición extraida de una _prop_ que recibe el componente, esta define si se debe o no mostrar dicho componente (La utilizamos para que no se vea en la ventana que se encuentra debajo).
 
 Dentro de _script_ se ha trabajo de la siguiente forma:
 
@@ -68,7 +68,7 @@ Se han añadido los iconos:
 
 5. **Las ventanas tendrán una prop type que dará a conocer en el interior del componente, de que ventana se trata (Control Panel, Apps, Games...) y que iconos tiene asociados. La ventana deben mostrar obligatoriamente, al menos, un título y una colección de iconos.**
 
-Como se puede observar, se cumple lo establecido en el enunciado. Se ha definido la prop como _theme_ en vez de _type_ puesto que se emplea el formato largo a la hora de definirlas y se evita confuciones con el elemento _type_.
+Como se puede observar, se cumple lo establecido en el enunciado. Se ha definido la _prop_ como _theme_ en vez de _type_ puesto que se emplea el formato largo a la hora de definirlas y se evita confusiones con el elemento _type_.
 
 6. **Los iconos por su parte, recibirán una prop name que indicará el icono del que se trata.**
 
