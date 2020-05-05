@@ -58,7 +58,6 @@ export default {
   },
   computed: {
     cssVars() {
-      console.log("hola");
       return {
         "--left": this.left,
         "--top": this.top
@@ -138,7 +137,5 @@ export default {
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 10px 10px;
   padding: 5px;
-  font-size: 12px;
-  color: rgb(39, 39, 39);
 }
 </style>
